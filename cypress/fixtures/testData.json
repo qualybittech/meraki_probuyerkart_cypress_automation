@@ -1,0 +1,17 @@
+{
+    "url": "https://probuyerkart.com/",
+    "checkoutUrl": "https://probuyerkart.com/?route=checkout/cart",
+    "loginEmail":"ank.si@gmail.com",
+    "loginPwd":"123456",
+    "firstName": "Ram",
+    "lastName": "Kumar",
+    "email": "hello@cypress.io",
+    "phoneNumber": "9876543210",
+    "company": "procurment company",
+    "address1": "Sea wood street",
+    "address2": "westwards road",
+    "city": "Bihar",
+    "pinCode": "123456",
+    "country": "India",
+    "zone": "Bihar"
+}
