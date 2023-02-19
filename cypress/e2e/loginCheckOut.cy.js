@@ -3,7 +3,7 @@
 import Home from './PageObject/HomePage';
 import Login from './PageObject/LoginPage';
 import AddToCartDetailsPage from './PageObject/AddToCartDetailsPage';
-
+import Checkout from './PageObject/CheckoutPage';
 describe('Checkout a product as login user', () => {
     let myTestData;
     before(() => {
@@ -13,21 +13,19 @@ describe('Checkout a product as login user', () => {
     })
 
     it('Ordering Product as User', () => {
-
         Home.openUrl(myTestData.url);
+        
+        //Loging in
+        Login.accountLogin(myTestData.loginEmail,myTestData.loginPwd)
 
+        Home.navigateHomeMenu();
         Home.selectFirstProductAndClickCart();
 
         //Redirecting to AddtoCart Page
-        AddToCartDetailsPage.navigateCheckOut(myTestData.checkoutUrl);
-
-        //Loging in
-        Login.loginToApp(myTestData.loginEmail,myTestData.loginPwd)
-
+        AddToCartDetailsPage.navigateCheckOutCart();
+        
         // //Check Out Details
-        /*Checkout.enterGuestDetails(myTestData.firstName,myTestData.lastName,myTestData.email,
-            myTestData.phoneNumber,myTestData.company,myTestData.address1,myTestData.address2,
-            myTestData.city,myTestData.pinCode,myTestData.country,myTestData.zone);*/
-    });
+            Checkout.checkoutAsLoggedInUser()
+        });
 
 });

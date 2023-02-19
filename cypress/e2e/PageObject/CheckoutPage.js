@@ -35,17 +35,19 @@ class Checkout {
     getZone() {
         return cy.get('#input-payment-zone');
     }
+
+    
     getCashOnDelivery() {
-        return cy.get(':nth-child(2) > .radio > label > input');
+        return cy.get('input[value="cod"]');
     }
     getPrivacyPolicy() {
         return cy.get('.section-body > :nth-child(3) > label > input');
     }
     getTermsNdCond() {
-        return cy.get(':nth-child(4) > label > input');
+        return cy.get('a.agree').siblings();
     }
     getPlaceOrder() {
-        return cy.get('#quick-checkout-button-confirm > span');
+        return cy.get('#quick-checkout-button-confirm');
     }
 
     enterGuestDetails(firstName,lastName,email,phoneNumber,company,address1,address2,city,pinCode,country,zone){
@@ -63,6 +65,12 @@ class Checkout {
         this.getZone().select(zone);
         this.getCashOnDelivery().check();
         this.getPrivacyPolicy().check();
+        this.getTermsNdCond().check();
+        this.getPlaceOrder().click();
+    }
+
+    checkoutAsLoggedInUser(){
+        this.getCashOnDelivery().check();
         this.getTermsNdCond().check();
         this.getPlaceOrder().click();
     }

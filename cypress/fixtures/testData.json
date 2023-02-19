@@ -1,6 +1,5 @@
 {
     "url": "https://probuyerkart.com/",
-    "checkoutUrl": "https://probuyerkart.com/?route=checkout/cart",
     "loginEmail":"ank.si@gmail.com",
     "loginPwd":"123456",
     "firstName": "Ram",

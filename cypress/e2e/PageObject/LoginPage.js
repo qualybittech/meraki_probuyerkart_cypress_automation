@@ -11,18 +11,20 @@ class Login {
     getLoginCheckBox() {
         return cy.get('.login-options > :nth-child(1) > label > input');
     }
-    /*loginCheckBox() {
-        return this.getLoginCheckBox().check();
+   
+    getAccountEmail() {
+        return cy.get('#input-email');
     }
-    email() {
-        return this.getEmail().type('ank.si@gmail.com');
+    getAccountPassWord() {
+        return cy.get('#input-password');
     }
-    passWord() {
-        return this.getPassWord().type('123456');
+    getAccountLoginButton() {
+        return cy.get('.form-horizontal .buttons > .pull-right > .btn');
     }
-    clickLoginButton() {
-        return this.getLoginButton().click();
-    }*/
+
+    getLoginBtn(){
+        return cy.get('.secondary-menu > .top-menu > .j-menu > .top-menu-item-1 > a');
+    }
 
     loginToApp(loginEmail,loginPwd){
         this.getLoginCheckBox().check();
@@ -31,12 +33,12 @@ class Login {
         this.getLoginButton().click();
     }
 
-            //Loging in
-         /*   login.loginCheckBox();
-            login.email();
-            login.passWord();
-            login.clickLoginButton();
-            cy.pause();*/
+    accountLogin(loginEmail,loginPwd){
+        this.getLoginBtn().click();
+        this.getAccountEmail().type(loginEmail);
+        this.getAccountPassWord().type(loginPwd);
+        this.getAccountLoginButton().click();
+    }
 }
 
 export default new Login();
