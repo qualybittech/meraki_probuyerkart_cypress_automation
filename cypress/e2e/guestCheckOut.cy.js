@@ -18,7 +18,7 @@ describe('Checkout a product as a guest user', () => {
         Home.selectFirstProductAndClickCart();
 
         //Redirecting to AddtoCart Page
-        AddToCartDetailsPage.navigateCheckOut(myTestData.checkoutUrl);
+        AddToCartDetailsPage.navigateCheckOutCart(myTestData.checkoutUrl);
 
         //Entering Guest Details
         Checkout.enterGuestDetails(myTestData.firstName,myTestData.lastName,myTestData.email,
