@@ -35,7 +35,6 @@ class Checkout {
     getZone() {
         return cy.get('#input-payment-zone');
     }
-
     
     getCashOnDelivery() {
         return cy.get('input[value="cod"]');
@@ -48,6 +47,10 @@ class Checkout {
     }
     getPlaceOrder() {
         return cy.get('#quick-checkout-button-confirm');
+    }
+
+    getOrderPlacedMsg() {
+        return cy.get('.page-title > span');
     }
 
     enterGuestDetails(firstName,lastName,email,phoneNumber,company,address1,address2,city,pinCode,country,zone){
@@ -73,6 +76,10 @@ class Checkout {
         this.getCashOnDelivery().check();
         this.getTermsNdCond().check();
         this.getPlaceOrder().click();
+    }
+
+    verifyOrderCreated(){
+        this.getOrderPlacedMsg().should('include.text','Your order has been placed!')
     }
 }
 

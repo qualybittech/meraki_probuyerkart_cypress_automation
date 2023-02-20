@@ -16,7 +16,8 @@ describe('Checkout a product as login user', () => {
         Home.openUrl(myTestData.url);
         
         //Loging in
-        Login.accountLogin(myTestData.loginEmail,myTestData.loginPwd)
+        Login.accountLogin(myTestData.loginEmail,myTestData.loginPwd);
+        Login.verifyLoggedIn();
 
         Home.navigateHomeMenu();
         Home.selectFirstProductAndClickCart();
@@ -25,7 +26,8 @@ describe('Checkout a product as login user', () => {
         AddToCartDetailsPage.navigateCheckOutCart();
         
         // //Check Out Details
-            Checkout.checkoutAsLoggedInUser()
+        Checkout.checkoutAsLoggedInUser();
+        Checkout.verifyOrderCreated();
         });
 
 });

@@ -24,6 +24,8 @@ describe('Checkout a product as a guest user', () => {
         Checkout.enterGuestDetails(myTestData.firstName,myTestData.lastName,myTestData.email,
             myTestData.phoneNumber,myTestData.company,myTestData.address1,myTestData.address2,
             myTestData.city,myTestData.pinCode,myTestData.country,myTestData.zone);
+
+        Checkout.verifyOrderCreated();
     });
 
 });

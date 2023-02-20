@@ -26,6 +26,10 @@ class Login {
         return cy.get('.secondary-menu > .top-menu > .j-menu > .top-menu-item-1 > a');
     }
 
+    getMyAcccountText() {
+        return cy.get('.my-account > .title');
+    }
+
     loginToApp(loginEmail,loginPwd){
         this.getLoginCheckBox().check();
         this.getEmail().type(loginEmail);
@@ -38,6 +42,10 @@ class Login {
         this.getAccountEmail().type(loginEmail);
         this.getAccountPassWord().type(loginPwd);
         this.getAccountLoginButton().click();
+    }
+
+    verifyLoggedIn(){
+        this.getMyAcccountText().should('include.text','My Account')
     }
 }
 
