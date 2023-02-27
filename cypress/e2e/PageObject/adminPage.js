@@ -43,13 +43,13 @@ class AdminPage {
     navigateApplication() {
         this.getMenuApp().trigger('mouseover').click();
     }
-    whatsAppSettings() {
+    whatsAppSettings(header, message, status) {
         this.getWhatsAppSettings().click();
         this.getHeaderInput().clear()
-            .type('Welcome to Meraki');
+            .type(header);
         this.getMessageInput().clear()
-            .type('Hi, Welcome. How may I help you?');
-        this.getStatusDropdown().select('Enable');
+            .type(message);
+        this.getStatusDropdown().select(status);
         this.getSaveButton().click();
     }
 
