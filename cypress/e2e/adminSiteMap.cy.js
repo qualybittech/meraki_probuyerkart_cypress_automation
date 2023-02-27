@@ -19,10 +19,7 @@ describe('Sitemap Validation', () => {
         AdminPage.getMenuApp();
         AdminPage.navigateApplication();
         AdminPage.siteMapSettings();
-        cy.get('span#sitemap_link').invoke('text')
-            .then((text) => {
-                cy.visit(text).should('be.ok');
-            });
+        AdminPage.htmlSiteMap();
     });
 
     it('Check whether the user is able to navigate to the XMLSitemap', () => {
@@ -33,9 +30,6 @@ describe('Sitemap Validation', () => {
         AdminPage.getMenuApp();
         AdminPage.navigateApplication();
         AdminPage.siteMapSettings();
-        cy.get('span#sitemapxml_link').invoke('text')
-            .then((text) => {
-                cy.request(text).should('be.ok');
-            });
+        AdminPage.xmlSiteMap();
     });
 });

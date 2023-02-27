@@ -58,6 +58,18 @@ class AdminPage {
     siteMapSettings() {
         this.getSiteMapSettings().first().click();
     }
+    htmlSiteMap() {
+        cy.get('span#sitemap_link').invoke('text')
+            .then((text) => {
+                cy.visit(text).should('be.ok');
+            });
+    }
+    xmlSiteMap() {
+        cy.get('span#sitemapxml_link').invoke('text')
+            .then((text) => {
+                cy.request(text).should('be.ok');
+            });
+    }
 
 }
 
