@@ -19,10 +19,10 @@ class AdminPage {
         return cy.get('#menu-apps');
     }
     getWhatsAppSettings() {
-        return cy.get('#tab-id-general > .row > :nth-child(4) > .card > .card-body > .btn');
+        return cy.get('img[alt=Whatsapp] + .card-body > .btn.btn-primary.fathershops-button-primary.btn-sm');
     }
     getSiteMapSettings() {
-        return cy.get('#tab-id-general > .row > :nth-child(6) > .card > .card-body > .btn')
+        return cy.get('img[alt="Site Maps"] + .card-body >.btn.btn-primary.fathershops-button-primary.btn-sm');
     }
     getHeaderInput() {
         return cy.get('input[name="header_title"]');
@@ -56,7 +56,7 @@ class AdminPage {
         this.getSaveButton().click();
     }
     siteMapSettings() {
-        this.getSiteMapSettings().click();
+        this.getSiteMapSettings().first().click();
     }
 
 }
