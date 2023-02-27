@@ -21,6 +21,9 @@ class AdminPage {
     getWhatsAppSettings() {
         return cy.get('#tab-id-general > .row > :nth-child(4) > .card > .card-body > .btn');
     }
+    getSiteMapSettings() {
+        return cy.get('#tab-id-general > .row > :nth-child(6) > .card > .card-body > .btn')
+    }
     getHeaderInput() {
         return cy.get('input[name="header_title"]');
     }
@@ -51,6 +54,9 @@ class AdminPage {
             .type(message);
         this.getStatusDropdown().select(status);
         this.getSaveButton().click();
+    }
+    siteMapSettings() {
+        this.getSiteMapSettings().click();
     }
 
 }
