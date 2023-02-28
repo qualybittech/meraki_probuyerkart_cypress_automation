@@ -1,7 +1,7 @@
 {
     "url": "https://probuyerkart.com/",
-    "loginEmail":"ank.si@gmail.com",
-    "loginPwd":"123456",
+    "loginEmail": "ank.si@gmail.com",
+    "loginPwd": "123456",
     "firstName": "Ram",
     "lastName": "Kumar",
     "email": "hello@cypress.io",
@@ -12,5 +12,10 @@
     "city": "Bihar",
     "pinCode": "123456",
     "country": "India",
-    "zone": "Bihar"
+    "zone": "Bihar",
+    "adminUrl": "https://probuyerkart.myfathershops.com/admin/",
+    "adminId": "qualybittech@gmail.com",
+    "adminPassword": "qualybittech007",
+    "header_title": "Welcome to Meraki",
+    "header_message": "Hi, Welcome! How may I help you?"
 }
