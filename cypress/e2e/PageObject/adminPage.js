@@ -121,5 +121,5 @@ class AdminPage {
         this.getSave().click();
         this.getConfirmationAlert().should('be.visible');
     }
-
+}
 export default new AdminPage();
