@@ -18,6 +18,9 @@ class AdminPage {
     getMenuApp() {
         return cy.get('#menu-apps');
     }
+    getSettings() {
+        return cy.get('#menu-system');
+    }
     getWhatsAppSettings() {
         return cy.get('img[alt=Whatsapp] + .card-body > .btn.btn-primary.fathershops-button-primary.btn-sm');
     }
@@ -39,6 +42,7 @@ class AdminPage {
     getSaveButton() {
         return cy.get('button[aria-label="Save"]');
     }
+    
     getErrorPhoneMessage() {
         return cy.get('input[name="phone_no"]+div[class="text-danger"]');
     }
@@ -47,6 +51,18 @@ class AdminPage {
     }
     getErrorMessageInput() {
         return cy.get('input[name="message"]+div[class="text-danger"]');
+    }
+    getDomainButton() {
+        return cy.get('div.fs-card-title').contains('Add Domain');
+    }
+    getDomain() {
+        return cy.get('#input-meta-domain');
+    }
+    getSave() {
+        return cy.get('#button-save');
+    }
+    getConfirmationAlert() {
+        return cy.get('.alert');
     }
     login(userId, pass) {
         this.getUser().type(userId);
@@ -57,6 +73,9 @@ class AdminPage {
     }
     navigateApplication() {
         this.getMenuApp().trigger('mouseover').click();
+    }
+    navigateSetting() {
+        this.getSettings().trigger('mouseover').click();
     }
     whatsAppSettings(header, message, status) {
         this.getWhatsAppSettings().click();
@@ -82,6 +101,7 @@ class AdminPage {
                 cy.request(text).should('be.ok');
             });
     }
+
     clearFieldValue() {
         this.getWhatsAppSettings().click();
         this.getWhatsAppPhoneNo().clear();
@@ -95,7 +115,11 @@ class AdminPage {
         this.getErrorMessageInput().should('be.visible');
     }
 
-
-}
+    domainSetting(domain) {
+        this.getDomainButton().click();
+        this.getDomain().clear().type(domain);
+        this.getSave().click();
+        this.getConfirmationAlert().should('be.visible');
+    }
 
 export default new AdminPage();

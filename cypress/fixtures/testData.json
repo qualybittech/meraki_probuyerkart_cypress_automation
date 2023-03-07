@@ -17,5 +17,8 @@
     "adminId": "qualybittech@gmail.com",
     "adminPassword": "qualybittech007",
     "header_title": "Welcome to Meraki",
-    "header_message": "Hi, Welcome! How may I help you?"
+    "header_message": "Hi, Welcome! How may I help you?",
+    "domains": {
+        "prodDomain": "probuyerkart.com"
+    }
 }
