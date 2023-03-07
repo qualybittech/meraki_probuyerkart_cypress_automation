@@ -3,7 +3,7 @@
 import Home from './PageObject/HomePage';
 import AdminPage from './PageObject/adminPage';
 
-describe('Enable WhatsApp floating button on Meraki home page', () => {
+describe('Validation of mandatory fields', () => {
     let myTestData;
     before(() => {
         cy.fixture('testData').then((fData) => {
