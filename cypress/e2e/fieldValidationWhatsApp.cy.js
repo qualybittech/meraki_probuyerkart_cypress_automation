@@ -18,6 +18,7 @@ describe('Enable WhatsApp floating button on Meraki home page', () => {
         // Admin Home Page
         AdminPage.getMenuApp();
         AdminPage.navigateApplication();
+        // Whatsapp Page
         AdminPage.clearFieldValue();
         AdminPage.fieldValidation();
     });
