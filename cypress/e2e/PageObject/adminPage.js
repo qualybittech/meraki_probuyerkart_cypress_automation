@@ -24,6 +24,9 @@ class AdminPage {
     getSiteMapSettings() {
         return cy.get('img[alt="Site Maps"] + .card-body >.btn.btn-primary.fathershops-button-primary.btn-sm');
     }
+    getWhatsAppPhoneNo() {
+        return cy.get('input[name="phone_no"]');
+    }
     getHeaderInput() {
         return cy.get('input[name="header_title"]');
     }
@@ -35,6 +38,15 @@ class AdminPage {
     }
     getSaveButton() {
         return cy.get('button[aria-label="Save"]');
+    }
+    getErrorPhoneMessage() {
+        return cy.get('input[name="phone_no"]+div[class="text-danger"]');
+    }
+    getErrorHeaderInput() {
+        return cy.get('input[name="header_title"]+div[class="text-danger"]');
+    }
+    getErrorMessageInput() {
+        return cy.get('input[name="message"]+div[class="text-danger"]');
     }
     login(userId, pass) {
         this.getUser().type(userId);
@@ -70,6 +82,19 @@ class AdminPage {
                 cy.request(text).should('be.ok');
             });
     }
+    clearFieldValue() {
+        this.getWhatsAppSettings().click();
+        this.getWhatsAppPhoneNo().clear();
+        this.getHeaderInput().clear();
+        this.getMessageInput().clear();
+        this.getSaveButton().click();
+    }
+    fieldValidation() {
+        this.getErrorPhoneMessage().should('be.visible');
+        this.getErrorHeaderInput().should('be.visible');
+        this.getErrorMessageInput().should('be.visible');
+    }
+
 
 }
 
